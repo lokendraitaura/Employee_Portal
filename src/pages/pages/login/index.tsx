@@ -17,7 +17,11 @@ import IconButton from '@mui/material/IconButton'
 import CardContent from '@mui/material/CardContent'
 import FormControl from '@mui/material/FormControl'
 import OutlinedInput from '@mui/material/OutlinedInput'
-import { styled, useTheme } from '@mui/material/styles'
+import {
+  styled
+
+  // useTheme
+} from '@mui/material/styles'
 import MuiCard, { CardProps } from '@mui/material/Card'
 import InputAdornment from '@mui/material/InputAdornment'
 import MuiFormControlLabel, { FormControlLabelProps } from '@mui/material/FormControlLabel'
@@ -38,6 +42,9 @@ import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Demo Imports
 import FooterIllustrationsV1 from 'src/views/pages/auth/FooterIllustration'
+
+// import EmployeeLogo from 'public/images/EmployeeLogo.png'
+import Image from 'next/image'
 
 interface State {
   password: string
@@ -70,7 +77,7 @@ const LoginPage = () => {
   })
 
   // ** Hook
-  const theme = useTheme()
+  // const theme = useTheme()
   const router = useRouter()
 
   const handleChange = (prop: keyof State) => (event: ChangeEvent<HTMLInputElement>) => {
@@ -90,7 +97,8 @@ const LoginPage = () => {
       <Card sx={{ zIndex: 1 }}>
         <CardContent sx={{ padding: theme => `${theme.spacing(12, 9, 7)} !important` }}>
           <Box sx={{ mb: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <svg
+            <Image src='/images/EmployeeLogo.png' width={40} height={36} />
+            {/* <svg
               width={35}
               height={29}
               version='1.1'
@@ -148,7 +156,7 @@ const LoginPage = () => {
                   </g>
                 </g>
               </g>
-            </svg>
+            </svg> */}
             <Typography
               variant='h6'
               sx={{
@@ -158,6 +166,7 @@ const LoginPage = () => {
                 textTransform: 'uppercase',
                 fontSize: '1.5rem !important'
               }}
+              style={{ marginLeft: '-0.1rem', color: '#2f8ec4' }}
             >
               {themeConfig.templateName}
             </Typography>
